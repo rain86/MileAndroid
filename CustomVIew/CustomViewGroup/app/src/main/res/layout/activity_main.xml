@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击图片粒子爆炸效果一"
+        android:id="@+id/explode_one"
+        app:layout_constraintBottom_toBottomOf="@id/explode_two"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/explode_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击图片粒子爆炸效果二"
+        app:layout_constraintBottom_toBottomOf="@id/opening_animation"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/explode_one" />
+
+    <Button
+        android:id="@+id/opening_animation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开场动画展示"
+        app:layout_constraintBottom_toBottomOf="@id/qq_Bubble"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/explode_two" />
+
+    <Button
+        android:id="@+id/qq_Bubble"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="模仿QQ聊天拖拽气泡效果"
+        app:layout_constraintBottom_toBottomOf="@id/scratch_card"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/opening_animation" />
+    <Button
+        android:id="@+id/scratch_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="刮刮卡效果展示"
+        app:layout_constraintBottom_toBottomOf="@id/loading"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/qq_Bubble" />
+
+    <Button
+        android:id="@+id/loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="loading动画效果展示"
+        app:layout_constraintBottom_toBottomOf="@id/other"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/scratch_card" />
+
+    <Button
+        android:id="@+id/other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="其他动画展示"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/loading" />
+
+</android.support.constraint.ConstraintLayout>
