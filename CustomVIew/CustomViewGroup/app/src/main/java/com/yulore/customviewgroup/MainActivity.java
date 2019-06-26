@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.qq_Bubble).setOnClickListener(this);
         findViewById(R.id.scratch_card).setOnClickListener(this);
         findViewById(R.id.loading).setOnClickListener(this);
+        findViewById(R.id.car_view).setOnClickListener(this);
     }
 
     @Override
@@ -46,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.loading:
                 intent = new Intent(this,LoadingActivity.class);
+                break;
+            case R.id.car_view:
+                intent = new Intent(this,PathMeasureCarDemoActivity.class);
                 break;
         }
         if (intent != null){

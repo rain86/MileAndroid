@@ -60,10 +60,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="loading动画效果展示"
-        app:layout_constraintBottom_toBottomOf="@id/other"
+        app:layout_constraintBottom_toBottomOf="@id/car_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/scratch_card" />
+
+    <Button
+        android:id="@+id/car_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="小汽车沿着轨迹转"
+        app:layout_constraintBottom_toBottomOf="@id/other"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/loading" />
 
     <Button
         android:id="@+id/other"
@@ -74,5 +84,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/loading" />
+
 
 </android.support.constraint.ConstraintLayout>
