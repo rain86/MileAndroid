@@ -70,20 +70,40 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="小汽车沿着轨迹转"
-        app:layout_constraintBottom_toBottomOf="@id/other"
+        app:layout_constraintBottom_toBottomOf="@id/map_view"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/loading" />
 
     <Button
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SVG实现中国地图"
+        app:layout_constraintBottom_toBottomOf="@id/other"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/car_view" />
+
+    <Button
         android:id="@+id/other"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="其他动画展示"
+        android:text="水波纹动画效果"
+        app:layout_constraintBottom_toBottomOf="@id/music_disc"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/map_view" />
+
+    <Button
+        android:id="@+id/music_disc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="网易云播放音乐的打碟效果"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/loading" />
+        app:layout_constraintTop_toTopOf="@id/other" />
 
 
 </android.support.constraint.ConstraintLayout>

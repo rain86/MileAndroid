@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <com.yulore.customviewgroup.view.CustomRippleAnimation
+        android:id="@+id/custom_ripple_animation"
+        app:radius="150"
+        app:strokWidth="18"
+        app:ripple_anim_type="fillRipple"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/button_img"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </com.yulore.customviewgroup.view.CustomRippleAnimation>
+
+</LinearLayout>

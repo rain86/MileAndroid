@@ -22,37 +22,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.scratch_card).setOnClickListener(this);
         findViewById(R.id.loading).setOnClickListener(this);
         findViewById(R.id.car_view).setOnClickListener(this);
+        findViewById(R.id.map_view).setOnClickListener(this);
+        findViewById(R.id.music_disc).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.explode_one:
-                intent = new Intent(this,ExplodeOneActivity.class);
+                intent = new Intent(this, ExplodeOneActivity.class);
                 break;
             case R.id.explode_two:
-                intent = new Intent(this,ExplodeTwoActivity.class);
+                intent = new Intent(this, ExplodeTwoActivity.class);
                 break;
             case R.id.opening_animation:
-                intent = new Intent(this,OpeningAnimationActivity.class);
-                break;
-            case R.id.other:
-                intent = new Intent(this,OtherActivity.class);
+                intent = new Intent(this, OpeningAnimationActivity.class);
                 break;
             case R.id.qq_Bubble:
-                intent = new Intent(this,QQBubbleActivity.class);
+                intent = new Intent(this, QQBubbleActivity.class);
                 break;
             case R.id.scratch_card:
-                intent = new Intent(this,ScratchCardActivity.class);
+                intent = new Intent(this, ScratchCardActivity.class);
                 break;
             case R.id.loading:
-                intent = new Intent(this,LoadingActivity.class);
+                intent = new Intent(this, LoadingActivity.class);
                 break;
             case R.id.car_view:
-                intent = new Intent(this,PathMeasureCarDemoActivity.class);
+                intent = new Intent(this, PathMeasureCarDemoActivity.class);
+                break;
+            case R.id.map_view:
+                intent = new Intent(this, SVGChinaMapActivity.class);
+                break;
+                case R.id.other:
+                intent = new Intent(this, CustomRippleAnimationActivity.class);
+                break;
+                case R.id.music_disc:
+                intent = new Intent(this, MuiscDiscVIewActivity.class);
                 break;
         }
-        if (intent != null){
+        if (intent != null) {
             startActivity(intent);
             intent = null;
         }

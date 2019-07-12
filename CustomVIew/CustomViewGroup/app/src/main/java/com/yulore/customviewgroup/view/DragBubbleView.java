@@ -156,19 +156,20 @@ public class DragBubbleView extends View {
     }
 
     private void init(Context context, AttributeSet attrs, int defStyleAttr) {
+        //自定义属性设置
         TypedArray array = context.obtainStyledAttributes(attrs,R.styleable.DragBubbleView,defStyleAttr,0);
-        mBubbleRadius = array.getDimension(R.styleable.DragBubbleView_bubble_radius,mBubbleRadius);
-        mBubbleColor = array.getColor(R.styleable.DragBubbleView_bubble_color, Color.RED);
-        mTextStr = array.getString(R.styleable.DragBubbleView_bubble_text);
-        mTextSize = array.getDimension(R.styleable.DragBubbleView_bubble_textSize,mTextSize);
-        mTextColor = array.getColor(R.styleable.DragBubbleView_bubble_textColor,Color.WHITE);
+        mBubbleRadius = array.getDimension(R.styleable.DragBubbleView_bubble_radius,mBubbleRadius);//半径
+        mBubbleColor = array.getColor(R.styleable.DragBubbleView_bubble_color, Color.RED);//颜色
+        mTextStr = array.getString(R.styleable.DragBubbleView_bubble_text);//文字
+        mTextSize = array.getDimension(R.styleable.DragBubbleView_bubble_textSize,mTextSize);//文字尺寸
+        mTextColor = array.getColor(R.styleable.DragBubbleView_bubble_textColor,Color.WHITE);//文字颜色
         array.recycle();
 
 
         //刚开始两个气泡半径大小一致
-        mBubFixedRadius = mBubbleRadius;
-        mBubMovableRadius = mBubbleRadius;
-        mMaxDist = 8 * mBubbleRadius;
+        mBubFixedRadius = mBubbleRadius;//固定气泡半径
+        mBubMovableRadius = mBubbleRadius;//可动气泡半径
+        mMaxDist = 8 * mBubbleRadius;//两个气泡可拖拽的最大距离
 
         MOVE_OFFSET = mMaxDist / 4;
 
@@ -275,7 +276,7 @@ public class DragBubbleView extends View {
     public boolean onTouchEvent(MotionEvent event) {
 
         switch (event.getAction()){
-            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_DOWN://按下动作
                 if (mBubbleState != BUBBLE_STATE_DISMISS){
                     mDist = (float) Math.hypot(event.getX() - mBubFixedCenter.x,event.getY()-mBubFixedCenter.y);
                     if (mDist < mBubbleRadius + MOVE_OFFSET){//加上偏移量方便拖拽
@@ -285,14 +286,14 @@ public class DragBubbleView extends View {
                     }
                 }
                 break;
-            case MotionEvent.ACTION_MOVE:
+            case MotionEvent.ACTION_MOVE://拖拽动作
                 if (mBubbleState != BUBBLE_STATE_DEFAULT){
                     mDist = (float) Math.hypot(event.getX() - mBubFixedCenter.x,event.getY()-mBubFixedCenter.y);
                     mBubMovableCenter.x = event.getX();
                     mBubMovableCenter.y = event.getY();
                     if (mBubbleState == BUBBLE_STATE_CONNECT){
                         if (mDist < mMaxDist - MOVE_OFFSET){
-                            mBubFixedRadius = mBubbleRadius - mDist / 8;
+                            mBubFixedRadius = mBubbleRadius - mDist / 8;//动态设置不动圆半径
                         }else{
                             mBubbleState = BUBBLE_STATE_APART;
                         }
@@ -300,14 +301,14 @@ public class DragBubbleView extends View {
                     invalidate();
                 }
                 break;
-            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_UP://抬起动作
                 if (mBubbleState == BUBBLE_STATE_CONNECT){
                     startBubbleRestAnim();
                 }else if (mBubbleState == BUBBLE_STATE_APART){
-                    if (mDist < 2* mBubbleRadius){
-                        startBubbleRestAnim();
+                    if (mDist < 2* mBubbleRadius){//如果拖拽距离小于2* mBubbleRadius距离
+                        startBubbleRestAnim();//回到原理位置动画
                     }else {
-                        startBubbleBurstAnim();
+                        startBubbleBurstAnim();//气泡爆炸动画
                     }
 
                 }

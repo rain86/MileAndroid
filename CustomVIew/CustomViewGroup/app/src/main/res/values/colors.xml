@@ -11,6 +11,9 @@
     <color name="blue">#00C6FF</color>
     <color name="green">#00E099</color>
     <color name="pink">#FF3892</color>
+    <color name="rippleColor">#C0362E</color>
+    <color name="black">#000000</color>
+    <color name="gray">#ff999999</color>
 
     <array name="splash_circle_colors">
         <item>@color/blue</item>

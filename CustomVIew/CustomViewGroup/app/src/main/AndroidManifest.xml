@@ -3,6 +3,7 @@
     package="com.yulore.customviewgroup">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,6 +25,15 @@
         <activity android:name=".ScratchCardActivity"/>
         <activity android:name=".LoadingActivity"/>
         <activity android:name=".PathMeasureCarDemoActivity"/>
+        <activity android:name=".SVGChinaMapActivity"/>
+        <activity android:name=".CustomRippleAnimationActivity"/>
+        <activity android:name=".MuiscDiscVIewActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        <service
+            android:name=".service.MusicService"
+            android:enabled="true"
+            android:exported="false" />
     </application>
 
 </manifest>

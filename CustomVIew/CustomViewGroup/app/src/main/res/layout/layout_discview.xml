@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.yulore.customviewgroup.view.DiscView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false">
+
+    <!--底盘-->
+    <ImageView
+        android:id="@+id/ivDiscBlackGround"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <!--实现切换-->
+    <com.yulore.customviewgroup.view.MyViewFlipper
+        android:id="@+id/vfDiscContain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true" />
+
+    <!--唱针-->
+    <ImageView
+        android:id="@+id/ivNeedle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_needle" />
+
+</com.yulore.customviewgroup.view.DiscView>
